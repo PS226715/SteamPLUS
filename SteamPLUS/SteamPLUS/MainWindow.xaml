@@ -3,10 +3,35 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:SteamPLUS"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="SteamPLUS" Height="1080" Width="1920" Background="#202020" WindowStartupLocation="CenterOwner" WindowState="Maximized">
+    <Window.Resources>
+        <Style TargetType="Button" x:Key="RoundedButtonStyle">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="5" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
-
+        <TextBlock x:Name="Aplication_name" FontWeight="Bold" FontFamily="Arial"  Text="SteamPLUS" FontSize="135" Margin="10,150,10,10" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <TextBlock.Foreground>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0.5,0.5">
+                    <GradientStop Color="White" Offset="0"/>
+                    <GradientStop Color="Gray" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBlock.Foreground>
+            </TextBlock>
+        <StackPanel Orientation="Vertical" x:Name="Start_Options_StackPanel"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,200,10,10">
+            <Button FontFamily="Arial" FontSize="50" x:Name="What_Is_Button" Content="What is SteamPLUS?" Foreground="White" Background="#333333" Margin="10,10,10,10" Style="{StaticResource RoundedButtonStyle}" Height="160" Width="600"/>
+            <Button FontFamily="Arial" FontSize="50" x:Name="Start_Button" Content="Start" Foreground="White" Background="#333333" Margin="10,10,10,10" Style="{StaticResource RoundedButtonStyle}" Height="160" Width="600"/>
+            <Button FontFamily="Arial" FontSize="50" x:Name="Settings_Button" Content="Settings" Foreground="White" Background="#333333" Margin="10,10,10,10" Style="{StaticResource RoundedButtonStyle}" Height="160" Width="600"/>
+        </StackPanel>
+        <TextBlock Text="Made by: Gio" Foreground="White" Margin="10,10,10,10" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
     </Grid>
 </Window>
